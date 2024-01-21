@@ -40,7 +40,7 @@ backend
 
 Clone the Repository
 ```
-git clone https://github.com/nyinyithu18/React-Spring-Boot-Full-Stack-Project-CRUD-.git
+git clone https://github.com/nyinyithu18/React-Spring-Boot-Full-Stack-Project-CRUD.git
 ```
 ```
 cd React-Spring-Boot-Full-Stack-Project-CRUD-
