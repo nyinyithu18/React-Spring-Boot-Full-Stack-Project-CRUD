@@ -24,6 +24,7 @@ User can search student datas with Name or NRC.
 ## React-frontend
 
   > react-frontend uses Flowbite React UI component as CSS-styled framework and Tailwind CSS.
+  > use Vite React Js  as front-end tool. 
 
 ## Configuration
 
@@ -42,7 +43,7 @@ Clone the Repository
 git clone https://github.com/nyinyithu18/React-Spring-Boot-Full-Stack-Project-CRUD-.git
 ```
 ```
-cd React-Js-and-Spring-Boot-Full-Stack-Project-CRUD-
+cd React-Spring-Boot-Full-Stack-Project-CRUD-
 ```
 
 frontend
@@ -56,12 +57,12 @@ npm i
 ```
 Start the application
 ```
-npm start
+npm run dev
 ```
 
 local host
 
-http://localhost:3000
+http://localhost:5173
 
 backend
 
