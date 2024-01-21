@@ -8,7 +8,7 @@ const EditStudent = (stNrc) => {
   const [openModal, setOpenModal] = useState(false);
   const [stData, setStData] = useState({
     name: "",
-    age: 0,
+    age: "",
     nrc: "",
     phone: "",
     email: "",
@@ -84,10 +84,10 @@ const EditStudent = (stNrc) => {
 
             <div className="mt-2 flex">
               <div className="border rounded-l-md ps-3 pe-8 pt-1 bg-slate-100">
-                <Label htmlFor="Age" value="Age" className="" />
+                <Label htmlFor="age" value="Age" className="" />
               </div>
               <input
-                id="Age"
+                id="age"
                 value={stData.age}
                 onChange={(e) => handle(e)}
                 type="number"
