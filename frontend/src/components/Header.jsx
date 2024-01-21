@@ -23,7 +23,7 @@ const Header = () => {
     dataList.map((data) => {
       name == data.name
         ? SearchByName()
-        : name == data.nrc && data.name == data.name
+        : name == data.nrc || data.name == data.name
         ? SearchByNrc()
         : Nodata();
     });
