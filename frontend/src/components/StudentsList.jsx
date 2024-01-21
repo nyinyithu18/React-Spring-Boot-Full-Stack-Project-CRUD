@@ -88,7 +88,7 @@ const StudentsList = () => {
                         {datas.address}
                       </td>
                       <td className="whitespace-nowrap px-6 font-normal py-4 flex">
-                        <EditStudent stName={datas.name} />
+                        <EditStudent stNrc={datas.nrc} />
 
                         <Button
                           type="button"
