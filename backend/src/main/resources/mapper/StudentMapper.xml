@@ -1,0 +1,41 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.backend.backend.repository.StudentRepository">
+    	
+    	<resultMap id="StudentResultMap" type="StudentModel">
+    		<id column="st_id" property="st_id" />
+    		<result column="name" property="name" />
+    		<result column="age" property="age" />
+    		<result column="nrc" property="nrc" />
+    		<result column="phone" property="phone" />
+    		<result column="email" property="email" />
+    		<result column="address" property="address" />
+    	</resultMap>
+    	
+    	<insert id="addStudent" parameterType="StudentModel">
+    		INSERT INTO student (name, age, nrc, phone, email, address) VALUES (#{name}, #{age}, #{nrc}, #{phone}, #{email}, #{address});
+    	</insert>
+    	
+    	<delete id="deleteStudent" parameterType="int">
+    		DELETE FROM student WHERE st_id=#{st_id};
+    	</delete>
+    	
+    	<select id="studentList" resultMap="StudentResultMap">
+    		SELECT st_id, name, age, nrc, phone, email, address FROM student;
+    	</select>
+    	
+    	<select id="studentById" resultMap="StudentResultMap" parameterType="String">
+    		SELECT st_id, name, age, nrc, phone, email, address FROM student WHERE name=#{name};
+    	</select>
+    	
+    	<select id="studentByNrc" resultMap="StudentResultMap" parameterType="String">
+    		SELECT st_id, name, age, nrc, phone, email, address FROM student WHERE nrc=#{nrc};
+    	</select>
+    	
+    	<update id="editStudent" parameterType="StudentModel">
+    		UPDATE student SET name=#{name}, age=#{age}, nrc=#{nrc}, phone=#{phone}, email=#{email}, address=#{address} WHERE st_id=#{st_id};
+    	</update>
+    	
+    </mapper>
