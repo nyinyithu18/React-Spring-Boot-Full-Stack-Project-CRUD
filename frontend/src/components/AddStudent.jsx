@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Button, Modal, TextInput, Textarea } from "flowbite-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ const AddStudent = () => {
       };
 
       setName("");
-      setAge();
+      setAge('');
       setNrc("");
       setPhone("");
       setEmail("");
@@ -79,14 +79,12 @@ const AddStudent = () => {
               />
             </div>
 
-            <div>
+            <div className="mt-2">
               <TextInput
-                placeholder="Age ( 5 - 40 )"
-                type="number"
-                value={age}
+                placeholder="Age (5 - 40)"
+                value={age || ''}
                 onChange={(e) => setAge(e.target.value)}
-                min="5"
-                max="40"
+                type="number"
                 required
               />
             </div>
