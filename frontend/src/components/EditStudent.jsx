@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { editStudent, studentById } from "../service/studentDataService";
 
-const EditStudent = (stName) => {
+const EditStudent = (stNrc) => {
   const [openModal, setOpenModal] = useState(false);
   const [stData, setStData] = useState({
     name: "",
@@ -15,10 +15,10 @@ const EditStudent = (stName) => {
     address: "",
   });
 
-  // Student By Id
+  // Student By NRC
   const StudentById = async () => {
     setOpenModal(true);
-    const student = await studentById(stName.stName);
+    const student = await studentByNrc(stNrc.stNrc);
     setStData(student.data);
     //console.log(student.data);
   };
