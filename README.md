@@ -23,7 +23,7 @@ User can search student datas with Name or NRC.
 
 ## React-frontend
 
-  > react-frontend uses Flowbite React UI component as CSS-styled framework and Tailwind CSS.
+  > react-frontend uses Flowbite React UI component as CSS-styled framework and Tailwind CSS. 
   > use Vite React Js  as front-end tool. 
 
 ## Configuration
