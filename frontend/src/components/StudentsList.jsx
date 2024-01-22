@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import EditStudent from "./EditStudent";
 import {
   deleteStudent,
-  studentById,
   studentList,
 } from "../service/studentDataService";
 
