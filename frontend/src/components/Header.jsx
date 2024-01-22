@@ -21,9 +21,9 @@ const Header = () => {
 
   const Search = () => {
     dataList.map((data) => {
-      name == data.name
+      data.name == name
         ? SearchByName()
-        : name == data.nrc
+        : data.nrc == name
         ? SearchByNrc()
         : Nodata();
     });
@@ -34,12 +34,14 @@ const Header = () => {
     setName("");
   };
 
+  // Search By Name
   const SearchByName = async () => {
     const searchByName = await studentById(name);
     setVData(searchByName.data);
     setName("");
   };
 
+  // Search By Nrc
   const SearchByNrc = async () => {
     const searchByNrc = await studentByNrc(name);
     setVData(searchByNrc.data);
@@ -48,7 +50,7 @@ const Header = () => {
 
   useEffect(() => {
     getDataList();
-  }, []);
+  }, [dataList]);
 
   return (
     <div>
