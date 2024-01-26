@@ -32,15 +32,15 @@ const AddStudent = () => {
         address: address,
       };
 
+      // Create Student Data
+      await addStudent(stData);
+      onCloseModal();
       setName("");
-      setAge('');
+      setAge("");
       setNrc("");
       setPhone("");
       setEmail("");
       setAddress("");
-      // Create Student Data
-      await addStudent(stData);
-      onCloseModal();
     } else {
     }
   };
@@ -82,7 +82,7 @@ const AddStudent = () => {
             <div className="mt-2">
               <TextInput
                 placeholder="Age (5 - 40)"
-                value={age || ''}
+                value={age || ""}
                 onChange={(e) => setAge(e.target.value)}
                 type="number"
                 required

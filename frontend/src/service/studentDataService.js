@@ -5,7 +5,7 @@ export const studentList = () => {
 };
 
 export const studentById = (name) => {
-  //console.log(name);
+  console.log(name);
   return api.get(`/studentById?name=${name}`);
 };
 

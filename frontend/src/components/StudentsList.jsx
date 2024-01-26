@@ -1,32 +1,47 @@
 import { Button } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import EditStudent from "./EditStudent";
-import {
-  deleteStudent,
-  studentList,
-} from "../service/studentDataService";
+import { deleteStudent } from "../service/studentDataService";
+import AddStudent from "./AddStudent";
+import { Link } from "react-router-dom";
+import { api } from "../api/urlResourses";
 
 const StudentsList = () => {
   const [data, setData] = useState([]);
 
-  // Student All Data
-  const stDataGet = async () => {
-    const res = await studentList();
-    setData(res.data);
-  };
+  // Fetch Student Data List
+  useEffect(() => {
+      api.get("http://localhost:8080/studentList")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [data]);
 
   // Delete Student Data
   const deleteStData = async (st_id) => {
     await deleteStudent(st_id);
   };
 
-  useEffect(() => {
-    stDataGet();
-  }, [data]);
-
   if (data) {
     return (
       <>
+        <div>
+          <div className="m-3 md:mx-10 lg:mx-12 md: p-3 md:p-6 flex justify-center">
+            <h1 className="font-bold text-xl md:text-2xl lg:text-3xl">
+              WELCOM TO STUDENT MANAGEMENT SYSTEM
+            </h1>
+          </div>
+          <div className="flex justify-around mt-6">
+            <AddStudent />
+
+            <Link to="/studentListView">
+              <Button type="button" className="btn bg-blue-500">
+                ALL <span className="ms-1 hidden md:block">Student</span>
+              </Button>
+            </Link>
+          </div>
+        </div>
         <div className="flex flex-col w-full h-full overflow-x-auto">
           <div className="mx-5 lg:mx-10 py-2 sm:px-6 lg:px-8">
             <table className="min-w-full text-left text-sm font-light">
